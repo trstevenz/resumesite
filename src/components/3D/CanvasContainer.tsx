@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { EffectComposer, Vignette } from '@react-three/postprocessing';
 import { Html } from '@react-three/drei';
@@ -135,16 +134,6 @@ interface CanvasContainerProps {
 
 export default function CanvasContainer({ scrollPercent }: CanvasContainerProps) {
   const { lowPerformance } = usePerformance();
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <div className="fixed inset-0 w-full h-full pointer-events-none z-0 bg-transparent">
@@ -178,84 +167,76 @@ export default function CanvasContainer({ scrollPercent }: CanvasContainerProps)
         <CameraController scrollPercent={scrollPercent} />
 
         {/* ========================================================= */}
-        {/* 3D EMBEDDED RESUME DETAILS PANEL MATRIX (Drei HTML 3D transforms) */}
+        {/* FLAT SCREEN-PROJECTED RESUME DETAILS PANEL HUD MATRIX    */}
         {/* ========================================================= */}
 
-        {/* 1. HERO WALL PLAQUE (Entrance corridor wall - Whiteboard style) */}
+        {/* 1. HERO CARD (Floating at Whiteboard station) */}
         {scrollPercent <= 0.20 && (
-          <group position={[1.20, 0.05, 4.2]} rotation={[0, -Math.PI / 2, 0]}>
+          <group position={[1.20, 0.05, 4.2]}>
             <Html
-              transform
+              center
               pointerEvents="auto"
-              distanceFactor={isMobile ? 0.28 : 0.8}
-              className={`${isMobile ? 'w-[340px]' : 'w-[1000px]'} pointer-events-auto select-none select-text animate-fade-in`}
+              className="w-[90vw] md:w-[480px] p-6 md:p-8 bg-[#090c10]/95 border-2 border-slate-800/80 rounded-2xl shadow-2xl max-h-[85vh] md:max-h-[600px] overflow-y-auto scrollbar-thin pointer-events-auto select-text animate-fade-in"
+              style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}
             >
               <Hero />
             </Html>
           </group>
         )}
 
-        {/* 2. ABOUT INFO (Rendered directly inside computer screen monitor) */}
+        {/* 2. ABOUT INFO (Floating at Workstation Monitor screen) */}
         {scrollPercent > 0.20 && scrollPercent <= 0.45 && (
-          <group position={[0, -0.14, -0.076]} rotation={[0, 0, 0]}>
+          <group position={[0, -0.14, -0.076]}>
             <Html
-              transform
+              center
               pointerEvents="auto"
-              distanceFactor={isMobile ? 0.29 : 0.75} // Fits tightly inside the monitor width bounds in over-the-shoulder view
-              className={`${isMobile ? 'w-[340px] h-[500px]' : 'w-[860px] h-[460px]'} pointer-events-auto overflow-y-auto overflow-x-hidden scrollbar-thin rounded-md animate-fade-in`}
+              className="w-[90vw] md:w-[480px] p-6 bg-[#090c10]/95 border-2 border-slate-800/80 rounded-2xl shadow-2xl max-h-[85vh] md:max-h-[600px] overflow-y-auto scrollbar-thin pointer-events-auto select-text animate-fade-in"
+              style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}
             >
               <About />
             </Html>
           </group>
         )}
 
-        {/* 3. EXPERIENCE DOSSIER (Floating beside the server racks) */}
+        {/* 3. EXPERIENCE DOSSIER (Floating beside the Server Cabinet stacks) */}
         {scrollPercent > 0.45 && scrollPercent <= 0.70 && (
-          <group position={[-1.73, 0.05, -0.38]} rotation={[0, Math.PI / 5, 0]}>
+          <group position={[-1.73, 0.05, -0.38]}>
             <Html
-              transform
+              center
               pointerEvents="auto"
-              distanceFactor={isMobile ? 0.29 : 0.8}
-              className={`${isMobile ? 'w-[340px] h-[520px]' : 'w-[950px]'} pointer-events-auto overflow-y-auto overflow-x-hidden scrollbar-thin animate-fade-in`}
+              className="w-[90vw] md:w-[480px] p-6 bg-[#090c10]/95 border-2 border-slate-800/80 rounded-2xl shadow-2xl max-h-[85vh] md:max-h-[600px] overflow-y-auto scrollbar-thin pointer-events-auto select-text animate-fade-in"
+              style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}
             >
               <Experience />
             </Html>
           </group>
         )}
 
-        {/* 4. SKILLS & PROJECTS (Slanted tablet panel sitting on the desk top) */}
+        {/* 4. SKILLS & PROJECTS (Floating at Tablet console top) */}
         {scrollPercent > 0.70 && scrollPercent <= 0.88 && (
-          <group position={[0.55, -0.4, 0.28]} rotation={[-Math.PI / 5, 0, 0]}>
+          <group position={[0.55, -0.4, 0.28]}>
             <Html
-              transform
+              center
               pointerEvents="auto"
-              distanceFactor={isMobile ? 0.26 : 0.65}
-              className={`${isMobile ? 'w-[340px] h-[600px]' : 'w-[850px] h-[580px]'} pointer-events-auto overflow-y-auto scrollbar-thin rounded-2xl animate-fade-in`}
+              className="w-[90vw] md:w-[480px] p-6 bg-[#090c10]/95 border-2 border-slate-800/80 rounded-2xl shadow-2xl max-h-[85vh] md:max-h-[600px] overflow-y-auto scrollbar-thin pointer-events-auto select-text animate-fade-in"
+              style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}
             >
-              <div className="space-y-6 pb-6 bg-[#090b0f]/95 border-[8px] border-slate-900 rounded-3xl p-8 shadow-2xl relative">
-                {/* Mock tablet details */}
-                <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-14 h-1 bg-slate-800 rounded-full" />
-                <div className="absolute top-2 right-6 flex items-center gap-1 text-[8px] font-share text-slate-500 select-none">
-                  <span>📶 100% 🔋</span>
-                </div>
-                
-                <div className="space-y-8 pt-4">
-                  <Skills />
-                  <Projects />
-                </div>
+              <div className="space-y-8">
+                <Skills />
+                <Projects />
               </div>
             </Html>
           </group>
         )}
 
-        {/* 5. EDUCATION & CONTACT TERMINAL (Holographic projection above desk) */}
+        {/* 5. EDUCATION & CONTACT TERMINAL (Floating above command center) */}
         {scrollPercent > 0.88 && (
-          <group position={[0, 0.35, 0.1]} rotation={[-Math.PI / 18, 0, 0]}>
+          <group position={[0, 0.35, 0.1]}>
             <Html
-              transform
+              center
               pointerEvents="auto"
-              distanceFactor={isMobile ? 0.29 : 0.8}
-              className={`${isMobile ? 'w-[340px] h-[600px]' : 'w-[950px] h-[650px]'} pointer-events-auto overflow-y-auto scrollbar-thin animate-fade-in`}
+              className="w-[90vw] md:w-[480px] p-6 bg-[#090c10]/95 border-2 border-slate-800/80 rounded-2xl shadow-2xl max-h-[85vh] md:max-h-[600px] overflow-y-auto scrollbar-thin pointer-events-auto select-text animate-fade-in"
+              style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}
             >
               <div className="space-y-8 pb-4">
                 <Education />
