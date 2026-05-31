@@ -1,0 +1,384 @@
+bjbj
+TC "Experience Summary" \f C \l "2"
+Experience Summary   Experienced QA Tester proficient in both manual and automation testing with 3 years 11 Months of hands-on experience. Seeking opportunities to apply my skills and abilities to contribute to organizational growth while further developing my expertise in testing methodologies and software quality assurance.
+TC "Domain Experience" \f C \l "2"
+Experience DetailsRole
+Guidewire QA Tester
+Created and executed test cases, managing defects using Rally.Conducted functional testing to UI with business needs.Participated in Agile ceremonies to support project progress.Collaborated with developers and product managers to resolve issues.Set up and configured test environments for effective testing.Implemented smoke, ad hoc, and regression testing strategies.Validated UI and forms, with experience in rating analysis.Automated tests using Selenium WebDriver, reducing testing time by 30%.Conducted form testing and comparison based on requirement documents, ensuring UI fields, validations, and business rules matched functional specifications.
+Project Details
+Client Name: Western Reserve GroupApplication: Guidewire Policy Center
+Assigned tasks based on team strengths, optimizing workload and fostering teamwork.Developed automated test scripts for happy path scenarios, improving testing efficiency.Led the review of test cases for Guidewire Policy Center, ensuring full coverage of requirements.Prepared reports and presentations on test results, highlighting key findings and recommendations.Client Name: Southern Pioneer
+Property & Casualty Insurance Company
+Application: Guidewire InsuranceNowCompared client-provided forms with the developed forms to ensure all fields, validations, and business rules were accurately implemented.Validated forms against client requirements, including field mapping, mandatory checks, dropdown values, and workflow behaviour.Created and executed comprehensive test cases to ensure complete functional and UI test coverage.Developed and maintained automated test cases to improve regression and smoke testing efficiency.Automated policy workflows and end-to-end scenarios using Playwright to reduce manual testing effort and improve test reliability.Client Name: American Farmers & Ranchers Mutual Insurance Company
+Application: Guidewire InsuranceNowTested forms based on client-provided requirements.Validated field mappings across multiple transactions.Verified triggering conditions and dynamic field behaviour.Executed test cases for form validations and workflows.Automated policy workflows and end-to-end scenarios using Playwright to reduce manual testing effort and improve test reliability.
+TC "Technical Skills" \f C \l "2"
+Technical Skills
+Agile MethodologiesAutomation Testing (Selenium, Playwright)JavaExcel (Macros)HTMLSQL (Basic)PostmanJIRAManual TestingHardware TroubleshootingGuidewire Policy CenterGuidewire Claim CenterInsuranceNowAgent PortalAnalytical Thinking Communication SkillsAI Prompt Techniques
+TC "Project Experience" \f C \l "1"
+Project ExperiencePerform UI Testing on Different Line Of Business like
+Commercial Auto, Inland Marine, Commercial Property, Workers Compensation, Commercial Package Policy.Testing on PC to CC Integrations and Agent Portal.Worked on Guidewire InsuranceNow Policy, Claim, and Billing transactions.Validated policy packages and individual forms based on client requirements.Automated policy workflows using Playwright with Typescript.
+TC "Education" \f C \l "2"
+EducationYear
+Degree
+Major Subject
+Institution
+Full Time/Part Time
+2024
+Computer Applications
+Adaikala Madha Arts & Science College, Thanjavur.(Affiliated by Bharathidasan University.)
+Part Time
+STEPHEN RAJ S
+Email ID : sstephenraj@newdreamdatasystems.com
+h'OY
+h'OY
+h'OY
+}m`R`R`}
+h'OY
+mH	@nH	@sH	@tH	@
+h'OY
+h'OY
+h'OY
+h'OY
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+h'OY
+mH	@nH	@sH	@tH	@
+h'OY
+mH	@nH	@sH	@tH	@
+h'OY
+mH	@nH	@sH	@tH	@
+h'OY
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@,
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@/
+mH	@nH	@sH	@tH	@,
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+zcL5
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+v`J0
+mH	@ph
+sH	@
+h'OY
+h'OY
+mH	@nH	@sH	@tH	@
+hT=h
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@ph
+sH	@
+gdk3
+uV<V#
+mH	@ph@@@
+sH	@
+mH	@ph@@@
+sH	@
+mH	@ph@@@
+sH	@
+mH	@nH	@sH	@tH	@
+mH	@ph@@@
+sH	@	P
+WSNI?0
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+t]I0
+hEcW
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+hEcW
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+hEcW
+|jXB
+mH	@ph
+sH	@
+hEcW
+mH	@nH	@sH	@tH	@
+hEcW
+mH	@nH	@sH	@tH	@
+mH	@nH	@sH	@tH	@
+kdu1
+mH	@sH	@
+mH	@ph
+sH	@
+mH	@ph
+sH	@
+mH	@ph
+sH	@
+ndslogo
+Picture 1
+PNG
+IHDR
+pHYs
+OiCCPPhotoshop ICC profile
+SgTS
+&*!
+H3Q5
+~<<+"
+0IWfH
+~<<E
+^D$.T
+5H1R
+T UH
+wB a
+AHXLXN
+XH,#
+T071
+oUX*
+FU3S
+x,!k
+9C3J3W
+1e\k
+J'\'Gg
+5qo<
+&!&KM
+;L;L
+`ZxZ,
+XUZ]
+}agb
+~OCO
+#/c/
+g1O9
+-J5*>
+XIlK
+H*Mz
+v m2=:
+geWf
+&zMk
+]OX/Y
+w-6U
+#pDy
+4<YyJ
+8>99
+x31^
+gAMA
+cHRM
+IDATx
+W1JE
+J]JMU
+:`#`
++q`-
+6 *<:
+pz~
+10W4
+E[<@s,Hc4
+i}H;$G
+JZq
+t
+P$
+4x!P
+bwDH
+@V'97
+X9jQ
+yX-[
+,nY5
+`9*"
+a$K$+
+%4}6
+<hm^yX
+syc{.
+vAm$
+OVfz
+65z!E
+1LE-O
+ByANE
+N{Gg*d
+I{	0
+$ft_@--
+Q~&ze
+Hk[Go|zw
+)6W.9
+a@W+v
+hZwt
+f4;G
+&Yw
+t?jv
+bH>SM*
+;w`n
+_\(Jc
+irT
+$/['
+Z=?Y
+]B)|)
+wK\Ly
+?ILj
+]CCW
+w(>m
+72{|
+p/5`[
+wb6m
+#2 -*n
+wK^G
+1l37^
+v4@gW
+X[V_c
+XZcA
+1v<n
+&U-9\
+TuG
+c+vd;vW
+xrssl
+X_WHcZ
+*](_
+rlwF
+,9@y
+[IlRt
+;Tl`y
+$"Z>
+2X. 9@
++DKg
+RM[.
+0WIcy
+~gS\
+y14^[*
+8Q4^D
+t=@xb
+v\/4
+};icX
+X4N,
+_G/+
+!bY8Y
+I4__
+8esN
+zxJ
+<5lG
+<Fyg
+^-F_W-
+'.QZT
+@~]UY
+Q"Gy
+0!%$
+^!;o
+zsd@8K>
+$Z5G
+uG3Tf
+j _~
+%uUe
+]<%
+wpP,
+q^0K+
+'#%N
+HiQ%j!
+Q3sOk
+PRWU
+8i;uS+
+5%3O
+^4{%
+EZ+lvQ
+D
+&_
+@a]U
+k]sa]UY
+[vhO<
+IEND
+Normal
+Heading 1
+Heading 2
+Heading 3
+Heading 4
+Heading 5
+Heading 6
+Heading 7
+Heading 8
+Heading 9
+Default Paragraph Font
+Table Normal
+No List
+apple-converted-space
+Strong
+List Paragraph
+EmptyLayoutCell
+Normal (Web)
+Header
+Footer
+Table Grid
+ykmvie
+whitespace-normal
+Emphasis
+_rels/.rels
+KY,
+sQ}#
+0aF0t
+$4vq^W
+<:+&
+;Fid
+%qh|
+R9C	5~
+Aw?'
+1XGVh
+c:?7
+{m3C
+4F+8
+JI$r
+!aLf
+MB[F7x"
+>Yr]H+
+a!e9#i
+An7jah
+56?$Q
+K(M&$R(.1
+_rels/.relsPK
+;qG3
+l :W
+=qjb&
+l :W
+;qG3
+Unknown
+Times New Roman
+Symbol
+Arial
+Tahoma
+SimSun
+Verdana
+Calibri Light
+Calibri
+Courier New
+Wingdings
+Cambria Math
+Z&!),.:;?]}
+& 6"
+([{
+Experience Summary
+ndds1
+Stephenraj S
+Experience Summary
+ndds1
+Normal
+Stephenraj S
+Microsoft Office Word
+Experience Summary
+Title
+KSOProductBuildVer
+1033-9.1.0.4246
+Root Entry
+Data
+1Table
+WordDocument
+SummaryInformation
+DocumentSummaryInformation
+CompObj
+Microsoft Word 97-2003 Document
+MSWordDoc
+Word.Document.8
