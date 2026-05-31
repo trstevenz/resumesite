@@ -4,7 +4,7 @@ import { EffectComposer, Vignette } from '@react-three/postprocessing';
 import { Html } from '@react-three/drei';
 import * as THREE from 'three';
 import OfficeEnvironment from './OfficeEnvironment';
-import HumanCharacter from './HumanCharacter';
+import AvatarHologram from './AvatarHologram';
 import BackgroundParticles from './BackgroundParticles';
 import ExperienceNodes from './ExperienceNodes';
 import SkillsPlanetarium from './SkillsPlanetarium';
@@ -162,8 +162,10 @@ export default function CanvasContainer({ scrollPercent }: CanvasContainerProps)
         {/* Office Room Geometry */}
         <OfficeEnvironment />
 
-        {/* Stylized Human Character */}
-        <HumanCharacter scrollPercent={scrollPercent} />
+        {/* Floating Cyber Hologram (replaces human character) */}
+        <group position={[0, -0.2, 0.4]}>
+          <AvatarHologram />
+        </group>
 
         {/* Faint falling binary code streams in the windows/background grids */}
         <BackgroundParticles />
