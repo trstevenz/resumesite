@@ -185,8 +185,8 @@ export default function CanvasContainer({ scrollPercent }: CanvasContainerProps)
             <Html
               transform
               pointerEvents="auto"
-              distanceFactor={isMobile ? 1.45 : 0.8}
-              className="w-[1000px] pointer-events-auto select-none select-text animate-fade-in"
+              distanceFactor={isMobile ? 0.28 : 0.8}
+              className={`${isMobile ? 'w-[340px]' : 'w-[1000px]'} pointer-events-auto select-none select-text animate-fade-in`}
             >
               <Hero />
             </Html>
@@ -199,8 +199,8 @@ export default function CanvasContainer({ scrollPercent }: CanvasContainerProps)
             <Html
               transform
               pointerEvents="auto"
-              distanceFactor={isMobile ? 1.15 : 0.75} // Fits tightly inside the monitor width bounds in over-the-shoulder view
-              className="w-[860px] h-[460px] pointer-events-auto overflow-y-auto overflow-x-hidden scrollbar-thin rounded-md animate-fade-in"
+              distanceFactor={isMobile ? 0.29 : 0.75} // Fits tightly inside the monitor width bounds in over-the-shoulder view
+              className={`${isMobile ? 'w-[340px] h-[500px]' : 'w-[860px] h-[460px]'} pointer-events-auto overflow-y-auto overflow-x-hidden scrollbar-thin rounded-md animate-fade-in`}
             >
               <About />
             </Html>
@@ -213,8 +213,8 @@ export default function CanvasContainer({ scrollPercent }: CanvasContainerProps)
             <Html
               transform
               pointerEvents="auto"
-              distanceFactor={isMobile ? 1.4 : 0.8}
-              className="w-[950px] pointer-events-auto animate-fade-in"
+              distanceFactor={isMobile ? 0.29 : 0.8}
+              className={`${isMobile ? 'w-[340px] h-[520px]' : 'w-[950px]'} pointer-events-auto overflow-y-auto overflow-x-hidden scrollbar-thin animate-fade-in`}
             >
               <Experience />
             </Html>
@@ -227,8 +227,8 @@ export default function CanvasContainer({ scrollPercent }: CanvasContainerProps)
             <Html
               transform
               pointerEvents="auto"
-              distanceFactor={isMobile ? 1.15 : 0.65}
-              className="w-[850px] h-[580px] pointer-events-auto overflow-y-auto scrollbar-thin rounded-2xl animate-fade-in"
+              distanceFactor={isMobile ? 0.26 : 0.65}
+              className={`${isMobile ? 'w-[340px] h-[600px]' : 'w-[850px] h-[580px]'} pointer-events-auto overflow-y-auto scrollbar-thin rounded-2xl animate-fade-in`}
             >
               <div className="space-y-6 pb-6 bg-[#090b0f]/95 border-[8px] border-slate-900 rounded-3xl p-8 shadow-2xl relative">
                 {/* Mock tablet details */}
@@ -252,8 +252,8 @@ export default function CanvasContainer({ scrollPercent }: CanvasContainerProps)
             <Html
               transform
               pointerEvents="auto"
-              distanceFactor={isMobile ? 1.45 : 0.8}
-              className="w-[950px] h-[650px] pointer-events-auto overflow-y-auto scrollbar-thin animate-fade-in"
+              distanceFactor={isMobile ? 0.29 : 0.8}
+              className={`${isMobile ? 'w-[340px] h-[600px]' : 'w-[950px] h-[650px]'} pointer-events-auto overflow-y-auto scrollbar-thin animate-fade-in`}
             >
               <div className="space-y-8 pb-4">
                 <Education />

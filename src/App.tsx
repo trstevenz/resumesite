@@ -45,8 +45,8 @@ export default function App() {
 
   // Set up input and custom scroll listeners
   useEffect(() => {
-    // Detect whether wheel scroll event originates inside scrollable HTML panel cards
-    const isInsideScrollable = (target: HTMLElement | null): boolean => {
+    // Detect whether an element is scrollable and return it
+    const getScrollableAncestor = (target: HTMLElement | null): HTMLElement | null => {
       let current = target;
       while (current && current !== document.body) {
         if (
@@ -56,16 +56,18 @@ export default function App() {
           current.style.overflowY === 'scroll'
         ) {
           if (current.scrollHeight > current.clientHeight) {
-            return true;
+            return current;
           }
         }
         current = current.parentElement;
       }
-      return false;
+      return null;
     };
 
     const handleWheel = (e: WheelEvent) => {
-      if (isInsideScrollable(e.target as HTMLElement)) {
+      const scrollable = getScrollableAncestor(e.target as HTMLElement);
+      if (scrollable) {
+        // Let the card container scroll naturally on desktop
         return;
       }
       e.preventDefault();
@@ -110,26 +112,35 @@ export default function App() {
       }
     };
 
-    // Mobile Swipe inputs
+    // Mobile Swipe inputs (with spill-over card scrolling)
     let startY = 0;
     const handleTouchStart = (e: TouchEvent) => {
-      if (isInsideScrollable(e.target as HTMLElement)) {
-        return;
-      }
       startY = e.touches[0].clientY;
     };
 
     const handleTouchMove = (e: TouchEvent) => {
-      if (isInsideScrollable(e.target as HTMLElement)) {
-        return;
-      }
-      if (e.cancelable) {
-        e.preventDefault();
-      }
+      const scrollable = getScrollableAncestor(e.target as HTMLElement);
       const currentY = e.touches[0].clientY;
       const deltaY = startY - currentY;
       startY = currentY;
 
+      if (scrollable) {
+        const prevScrollTop = scrollable.scrollTop;
+        scrollable.scrollTop += deltaY;
+
+        // If the card scrolled (meaning it did not hit the top/bottom boundary), consume the event
+        if (Math.abs(scrollable.scrollTop - prevScrollTop) > 0.5) {
+          if (e.cancelable) {
+            e.preventDefault();
+          }
+          return;
+        }
+      }
+
+      // If we reach the bounds of card scroll or swipe outside cards, scroll the main timeline
+      if (e.cancelable) {
+        e.preventDefault();
+      }
       const touchSensitivity = 1.6;
       scrollPosRef.current = Math.min(
         Math.max(scrollPosRef.current + deltaY * touchSensitivity, 0),
@@ -161,8 +172,33 @@ export default function App() {
       window.removeEventListener('scrollToSection', handleScrollToSection);
     };
   }, []);
+  const handlePrevMobile = () => {
+    playSound('click');
+    const steps = [0.0, 0.30, 0.58, 0.79, 0.95];
+    const currentPct = scrollPercent;
+    let target = 0.0;
+    for (let i = steps.length - 1; i >= 0; i--) {
+      if (steps[i] < currentPct - 0.02) {
+        target = steps[i];
+        break;
+      }
+    }
+    scrollPosRef.current = target * maxScroll;
+  };
 
-
+  const handleNextMobile = () => {
+    playSound('click');
+    const steps = [0.0, 0.30, 0.58, 0.79, 0.95];
+    const currentPct = scrollPercent;
+    let target = 0.95;
+    for (let i = 0; i < steps.length; i++) {
+      if (steps[i] > currentPct + 0.02) {
+        target = steps[i];
+        break;
+      }
+    }
+    scrollPosRef.current = target * maxScroll;
+  };
 
   return (
     <div className="relative min-h-screen bg-cyber-bg text-slate-100 overflow-y-hidden select-none">
@@ -209,6 +245,22 @@ export default function App() {
         <SoundToggle />
       </div>
 
+      {/* Mobile Floating Arrow Buttons (Bottom Center) - foolproof mobile navigation */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 flex items-center gap-4 pointer-events-auto md:hidden bg-slate-950/90 border border-slate-800 rounded-xl px-4 py-2.5 shadow-2xl">
+        <button
+          onClick={handlePrevMobile}
+          className="px-4 py-2 border border-slate-800 bg-slate-900 rounded-lg text-[10px] font-orbitron tracking-wider text-slate-400 active:text-neon-cyan active:border-neon-cyan select-none cursor-none"
+        >
+          ◀ BACK
+        </button>
+        <div className="h-4 w-[1px] bg-slate-800" />
+        <button
+          onClick={handleNextMobile}
+          className="px-4 py-2 border border-slate-800 bg-slate-900 rounded-lg text-[10px] font-orbitron tracking-wider text-slate-400 active:text-neon-cyan active:border-neon-cyan select-none cursor-none"
+        >
+          NEXT ▶
+        </button>
+      </div>
 
       {/* Scroll Dial status HUD (Bottom Left) */}
       <div className="fixed bottom-6 left-6 z-40 bg-slate-950/80 border border-slate-800 px-3.5 py-1.5 rounded-md backdrop-blur-md hidden sm:block shadow-lg">
