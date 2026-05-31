@@ -39,7 +39,7 @@ export default function Hero() {
   return (
     <section
       id="home-card"
-      className="w-full relative p-10 bg-slate-950/45 backdrop-blur-md border-2 border-slate-800/80 rounded-3xl shadow-2xl flex flex-col justify-between overflow-hidden"
+      className="w-full relative p-5 sm:p-10 bg-slate-950/45 backdrop-blur-md border-2 border-slate-800/80 rounded-3xl shadow-2xl flex flex-col justify-between overflow-hidden"
       style={{ boxShadow: '0 25px 60px rgba(0,0,0,0.8)' }}
     >
       {/* Chrome wall mounts for the glass board */}
@@ -73,7 +73,7 @@ export default function Hero() {
           >
             <h1 
               data-text="STEPHEN RAJ S"
-              className="glitch-text font-orbitron font-black text-5xl sm:text-6xl md:text-7xl xl:text-8xl tracking-tighter text-white leading-none"
+              className="glitch-text font-orbitron font-black text-3xl sm:text-5xl md:text-7xl xl:text-8xl tracking-tighter text-white leading-none"
             >
               STEPHEN RAJ S
             </h1>

@@ -190,44 +190,42 @@ export default function About() {
               </div>
             </div>
 
-            <div className="flex flex-grow overflow-hidden h-[410px]">
+            <div className="flex flex-col md:flex-row flex-grow md:overflow-hidden md:h-[410px] h-auto">
               {/* File Explorer Sidebar */}
-              <div className="w-52 bg-[#080b0f] border-r border-slate-900 p-3 select-none flex flex-col gap-4 text-left">
-                <div>
-                  <span className="text-[9px] text-slate-500 font-orbitron uppercase tracking-wider block mb-2">
-                    WORKSPACE_EXPLORER
-                  </span>
-                  
-                  {/* Folder Header */}
-                  <div className="flex items-center gap-1.5 text-xs text-slate-300 font-bold mb-2">
-                    <Folder className="w-4 h-4 text-neon-violet" />
-                    <span>Stephen_Raj/</span>
-                  </div>
-                  
-                  {/* File List */}
-                  <div className="flex flex-col gap-1 pl-4">
-                    {files.map((file) => (
-                      <button
-                        key={file.id}
-                        onClick={() => {
-                          setSelectedFile(file.id as any);
-                          playSound('click');
-                        }}
-                        onMouseEnter={() => playSound('hover')}
-                        className={`flex items-center gap-2 px-2 py-1.5 rounded text-left text-xs transition-colors cursor-none ${
-                          selectedFile === file.id
-                            ? 'bg-slate-950 border border-slate-800 text-neon-cyan'
-                            : 'text-slate-400 hover:text-slate-200'
-                        }`}
-                      >
-                        {file.icon}
-                        <span className="truncate">{file.name}</span>
-                      </button>
-                    ))}
-                  </div>
+              <div className="w-full md:w-52 bg-[#080b0f] border-b md:border-b-0 md:border-r border-slate-900 p-3 select-none flex flex-row md:flex-col gap-2 md:gap-4 text-left overflow-x-auto md:overflow-x-visible scrollbar-none">
+                <span className="hidden md:block text-[9px] text-slate-500 font-orbitron uppercase tracking-wider mb-2">
+                  WORKSPACE_EXPLORER
+                </span>
+                
+                {/* Folder Header */}
+                <div className="hidden md:flex items-center gap-1.5 text-xs text-slate-300 font-bold mb-2">
+                  <Folder className="w-4 h-4 text-neon-violet" />
+                  <span>Stephen_Raj/</span>
+                </div>
+                
+                {/* File List */}
+                <div className="flex flex-row md:flex-col gap-1.5 pl-0 md:pl-4 w-full overflow-x-auto md:overflow-x-visible scrollbar-none">
+                  {files.map((file) => (
+                    <button
+                      key={file.id}
+                      onClick={() => {
+                        setSelectedFile(file.id as any);
+                        playSound('click');
+                      }}
+                      onMouseEnter={() => playSound('hover')}
+                      className={`flex items-center gap-2 px-3 py-2 md:px-2 md:py-1.5 rounded text-left text-xs transition-colors cursor-none whitespace-nowrap flex-shrink-0 ${
+                        selectedFile === file.id
+                          ? 'bg-slate-950 border border-slate-800 text-neon-cyan'
+                          : 'text-slate-400 hover:text-slate-200'
+                      }`}
+                    >
+                      {file.icon}
+                      <span className="truncate">{file.name}</span>
+                    </button>
+                  ))}
                 </div>
 
-                <div className="mt-auto border-t border-slate-900 pt-3">
+                <div className="hidden md:block mt-auto border-t border-slate-900 pt-3">
                   <span className="text-[8px] text-slate-600 block leading-tight font-share">
                     ENGINE_SYS: STABLE
                   </span>

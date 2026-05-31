@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
 import CustomCursor from './components/CustomCursor';
 import CanvasContainer from './components/3D/CanvasContainer';
-import SoundToggle from './components/SoundToggle';
 import Navbar from './components/Navbar';
-import { usePerformance } from './hooks/usePerformance';
-import { Cpu, ShieldCheck } from 'lucide-react';
 
 // Import details sections
 import Hero from './components/Hero';
@@ -27,7 +24,6 @@ const getActiveSection = (pct: number) => {
 
 export default function App() {
   const [scrollPercent, setScrollPercent] = useState(0);
-  const { lowPerformance, togglePerformance } = usePerformance();
 
   // Track standard vertical scrolling to drive the background 3D camera sweeps
   useEffect(() => {
@@ -62,35 +58,6 @@ export default function App() {
       {/* High-Tech Navbar Header */}
       <Navbar scrollPercent={scrollPercent} activeSection={activeSection} />
 
-      {/* Floating System HUD Panel (Top Right - absolute positioned to avoid navbar overlaps) */}
-      <div className="fixed top-20 md:top-24 right-6 z-40 flex items-center gap-3 pointer-events-auto">
-        <div className="hidden md:flex items-center gap-1.5 px-3 py-1.5 bg-slate-950/80 border border-slate-800 rounded-lg text-[9px] font-share tracking-wider text-neon-cyan shadow-lg select-none">
-          <ShieldCheck className="w-3.5 h-3.5 text-neon-cyan" />
-          <span>SYS_PIPELINE: PASS_100%</span>
-        </div>
-
-        <button
-          onClick={togglePerformance}
-          className={`relative p-2.5 rounded-lg border flex items-center justify-center transition-all duration-300 cursor-none select-none ${
-            lowPerformance
-              ? 'bg-amber-500/10 border-amber-500 text-amber-500'
-              : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:border-slate-600 hover:text-slate-200 shadow-lg'
-          }`}
-          title={lowPerformance ? 'Switch to High Quality Graphics' : 'Switch to High Performance Graphics'}
-        >
-          <Cpu className="w-5 h-5" />
-          {lowPerformance && (
-            <>
-              <span className="absolute top-0 left-0 w-1 h-1 border-t border-l border-amber-500" />
-              <span className="absolute top-0 right-0 w-1 h-1 border-t border-r border-amber-500" />
-              <span className="absolute bottom-0 left-0 w-1 h-1 border-b border-l border-amber-500" />
-              <span className="absolute bottom-0 right-0 w-1 h-1 border-b border-r border-amber-500" />
-            </>
-          )}
-        </button>
-
-        <SoundToggle />
-      </div>
 
       {/* Scroll Dial status HUD (Bottom Left) */}
       <div className="fixed bottom-6 left-6 z-40 bg-slate-950/80 border border-slate-800 px-3.5 py-1.5 rounded-md backdrop-blur-md hidden sm:block shadow-lg select-none">

@@ -70,7 +70,7 @@ export default function Navbar({ scrollPercent, activeSection }: NavbarProps) {
         {/* SYSTEM CONTROLS (Sound / Performance) */}
         <div className="flex items-center gap-2">
           {/* Status badge pill */}
-          <div className="hidden md:flex items-center gap-1.5 px-3 py-1 bg-slate-950/85 border border-slate-800 rounded-lg text-[9px] font-share tracking-wider text-neon-cyan">
+          <div className="hidden lg:flex items-center gap-1.5 px-3 py-1 bg-slate-950/85 border border-slate-800 rounded-lg text-[9px] font-share tracking-wider text-neon-cyan">
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>TESTS_PASSED: 100%</span>
           </div>
@@ -82,7 +82,7 @@ export default function Navbar({ scrollPercent, activeSection }: NavbarProps) {
               playSound('click');
             }}
             onMouseEnter={() => playSound('hover')}
-            className={`relative p-2.5 rounded-lg border flex items-center justify-center transition-all duration-300 cursor-none ${
+            className={`hidden lg:flex relative p-2.5 rounded-lg border items-center justify-center transition-all duration-300 cursor-none ${
               lowPerformance
                 ? 'bg-amber-500/10 border-amber-500 text-amber-500'
                 : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:border-slate-600 hover:text-slate-200'
@@ -94,7 +94,9 @@ export default function Navbar({ scrollPercent, activeSection }: NavbarProps) {
           </button>
 
           {/* Sound Toggle */}
-          <SoundToggle />
+          <div className="hidden lg:block">
+            <SoundToggle />
+          </div>
 
           {/* Mobile menu triggers */}
           <button
@@ -134,13 +136,6 @@ export default function Navbar({ scrollPercent, activeSection }: NavbarProps) {
           className="h-full bg-gradient-to-r from-neon-cyan via-neon-violet to-neon-magenta shadow-[0_0_8px_rgba(0,240,118,0.8)] transition-all duration-100"
           style={{ width: `${scrollPercent * 100}%` }}
         />
-      </div>
-
-      {/* SCROLL PERCENT DIAL */}
-      <div className="fixed bottom-4 left-4 z-40 bg-slate-950/80 border border-slate-800 px-3 py-1.5 rounded-md backdrop-blur-md hidden sm:block">
-        <span className="font-share text-xs text-neon-cyan tracking-widest uppercase">
-          SYS_PIPELINE_LOAD: {Math.round(scrollPercent * 100)}%
-        </span>
       </div>
     </nav>
   );

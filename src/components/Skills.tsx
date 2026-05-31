@@ -64,12 +64,12 @@ export default function Skills() {
   return (
     <section
       id="skills-card"
-      className="w-full relative p-6 bg-slate-950/90 border border-slate-800 rounded-2xl"
+      className="w-full relative p-5 sm:p-6 bg-slate-950/90 border border-slate-800 rounded-2xl"
     >
       <div className="max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-left">
         
         {/* LEFT COLUMN: CATEGORY MENU */}
-        <div className="lg:col-span-5 flex flex-col gap-6">
+        <div className="lg:col-span-5 flex flex-col gap-6 w-full overflow-hidden">
           <div className="flex flex-col gap-2">
             <span className="font-share text-xs tracking-widest text-neon-cyan uppercase">
               // UNIT_TEST: SKILL_GRID
@@ -84,7 +84,7 @@ export default function Skills() {
             Observe connection nodes in the 3D test cluster, or select module databases below to verify skill coverages.
           </p>
 
-          <div className="flex flex-col gap-3 mt-4">
+          <div className="flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible gap-3 mt-4 pb-2 lg:pb-0 scrollbar-none w-full">
             {categories.map((cat, idx) => (
               <button
                 key={cat.title}
@@ -93,7 +93,7 @@ export default function Skills() {
                   playSound('unlock');
                 }}
                 onMouseEnter={() => playSound('hover')}
-                className={`p-4 rounded-xl border text-left cursor-none transition-all duration-300 relative group overflow-hidden ${
+                className={`p-4 rounded-xl border text-left cursor-none transition-all duration-300 relative group overflow-hidden flex-shrink-0 w-[240px] lg:w-full ${
                   activeCategory === idx
                     ? 'bg-slate-950/80 border-slate-700 shadow-[0_0_15px_rgba(0,240,118,0.05)]'
                     : 'bg-slate-950/20 border-slate-900 hover:border-slate-800'

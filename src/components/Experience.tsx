@@ -66,13 +66,13 @@ export default function Experience() {
   return (
     <section
       id="experience-card"
-      className="w-full relative p-8 bg-[#070b0e]/85 backdrop-blur-md border-2 border-emerald-500/35 rounded-3xl shadow-2xl"
+      className="w-full relative p-5 sm:p-8 bg-[#070b0e]/85 backdrop-blur-md border-2 border-emerald-500/35 rounded-3xl shadow-2xl"
       style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(16, 185, 129, 0.1)' }}
     >
       <div className="max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start text-left">
         
         {/* LEFT COLUMN: PIPELINE TABS */}
-        <div className="lg:col-span-4 flex flex-col gap-6">
+        <div className="lg:col-span-4 flex flex-col gap-6 w-full overflow-hidden">
           <div className="flex flex-col gap-2">
             <span className="font-share text-xs tracking-widest text-neon-cyan uppercase">
               // TELEMETRY: PIPELINE_RUNNER
@@ -87,7 +87,7 @@ export default function Experience() {
             Select pipeline nodes to extract sprint verification details and spec logs.
           </p>
 
-          <div className="flex flex-col gap-3 mt-4">
+          <div className="flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible gap-3 mt-4 pb-2 lg:pb-0 scrollbar-none w-full">
             {jobs.map((job, index) => (
               <button
                 key={job.client}
@@ -96,7 +96,7 @@ export default function Experience() {
                   playSound('unlock');
                 }}
                 onMouseEnter={() => playSound('hover')}
-                className={`p-4 rounded-xl border text-left cursor-none transition-all duration-300 relative group overflow-hidden ${
+                className={`p-4 rounded-xl border text-left cursor-none transition-all duration-300 relative group overflow-hidden flex-shrink-0 w-[260px] lg:w-full ${
                   activeJob === index
                     ? 'bg-slate-950/90 border-emerald-500/50 shadow-[0_0_20px_rgba(16,185,129,0.08)]'
                     : 'bg-slate-950/40 border-slate-900 hover:border-slate-800'

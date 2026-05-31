@@ -14,6 +14,14 @@ export default function CustomCursor() {
   const trailY = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    const isTouchDevice = 
+      typeof window !== 'undefined' && 
+      ('ontouchstart' in window || navigator.maxTouchPoints > 0 || window.innerWidth < 768);
+      
+    if (isTouchDevice) {
+      return;
+    }
+
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
