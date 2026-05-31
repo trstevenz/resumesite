@@ -1,6 +1,5 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { EffectComposer, Vignette } from '@react-three/postprocessing';
-import { Html } from '@react-three/drei';
 import * as THREE from 'three';
 import OfficeEnvironment from './OfficeEnvironment';
 import AvatarHologram from './AvatarHologram';
@@ -9,14 +8,6 @@ import ExperienceNodes from './ExperienceNodes';
 import SkillsPlanetarium from './SkillsPlanetarium';
 import { usePerformance } from '../../hooks/usePerformance';
 
-// Import 2D Overlay content panels to embed in 3D
-import Hero from '../Hero';
-import About from '../About';
-import Experience from '../Experience';
-import Skills from '../Skills';
-import Projects from '../Projects';
-import Education from '../Education';
-import Contact from '../Contact';
 
 // Internal controller to handle camera movements relative to scroll position
 function CameraController({ scrollPercent }: { scrollPercent: number }) {
@@ -166,85 +157,7 @@ export default function CanvasContainer({ scrollPercent }: CanvasContainerProps)
         {/* Camera Rig controller */}
         <CameraController scrollPercent={scrollPercent} />
 
-        {/* ========================================================= */}
-        {/* FLAT SCREEN-PROJECTED RESUME DETAILS PANEL HUD MATRIX    */}
-        {/* ========================================================= */}
 
-        {/* 1. HERO CARD (Floating at Whiteboard station) */}
-        {scrollPercent <= 0.20 && (
-          <group position={[1.20, 0.05, 4.2]}>
-            <Html
-              center
-              pointerEvents="auto"
-              className="w-[90vw] md:w-[480px] p-6 md:p-8 bg-[#090c10]/95 border-2 border-slate-800/80 rounded-2xl shadow-2xl max-h-[85vh] md:max-h-[600px] overflow-y-auto scrollbar-thin pointer-events-auto select-text animate-fade-in"
-              style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}
-            >
-              <Hero />
-            </Html>
-          </group>
-        )}
-
-        {/* 2. ABOUT INFO (Floating at Workstation Monitor screen) */}
-        {scrollPercent > 0.20 && scrollPercent <= 0.45 && (
-          <group position={[0, -0.14, -0.076]}>
-            <Html
-              center
-              pointerEvents="auto"
-              className="w-[90vw] md:w-[480px] p-6 bg-[#090c10]/95 border-2 border-slate-800/80 rounded-2xl shadow-2xl max-h-[85vh] md:max-h-[600px] overflow-y-auto scrollbar-thin pointer-events-auto select-text animate-fade-in"
-              style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}
-            >
-              <About />
-            </Html>
-          </group>
-        )}
-
-        {/* 3. EXPERIENCE DOSSIER (Floating beside the Server Cabinet stacks) */}
-        {scrollPercent > 0.45 && scrollPercent <= 0.70 && (
-          <group position={[-1.73, 0.05, -0.38]}>
-            <Html
-              center
-              pointerEvents="auto"
-              className="w-[90vw] md:w-[480px] p-6 bg-[#090c10]/95 border-2 border-slate-800/80 rounded-2xl shadow-2xl max-h-[85vh] md:max-h-[600px] overflow-y-auto scrollbar-thin pointer-events-auto select-text animate-fade-in"
-              style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}
-            >
-              <Experience />
-            </Html>
-          </group>
-        )}
-
-        {/* 4. SKILLS & PROJECTS (Floating at Tablet console top) */}
-        {scrollPercent > 0.70 && scrollPercent <= 0.88 && (
-          <group position={[0.55, -0.4, 0.28]}>
-            <Html
-              center
-              pointerEvents="auto"
-              className="w-[90vw] md:w-[480px] p-6 bg-[#090c10]/95 border-2 border-slate-800/80 rounded-2xl shadow-2xl max-h-[85vh] md:max-h-[600px] overflow-y-auto scrollbar-thin pointer-events-auto select-text animate-fade-in"
-              style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}
-            >
-              <div className="space-y-8">
-                <Skills />
-                <Projects />
-              </div>
-            </Html>
-          </group>
-        )}
-
-        {/* 5. EDUCATION & CONTACT TERMINAL (Floating above command center) */}
-        {scrollPercent > 0.88 && (
-          <group position={[0, 0.35, 0.1]}>
-            <Html
-              center
-              pointerEvents="auto"
-              className="w-[90vw] md:w-[480px] p-6 bg-[#090c10]/95 border-2 border-slate-800/80 rounded-2xl shadow-2xl max-h-[85vh] md:max-h-[600px] overflow-y-auto scrollbar-thin pointer-events-auto select-text animate-fade-in"
-              style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}
-            >
-              <div className="space-y-8 pb-4">
-                <Education />
-                <Contact />
-              </div>
-            </Html>
-          </group>
-        )}
 
         {/* Vignette postprocessing effect */}
         {!lowPerformance && (
